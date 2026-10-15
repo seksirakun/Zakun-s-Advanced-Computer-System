@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+    <Nullable>disable</Nullable>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>bin\</OutputPath>
+    <AssemblyName>ZACS</AssemblyName>
+    <RootNamespace>Zacs</RootNamespace>
+    <Version>1.0.0</Version>
+    <Authors>seksirakun48</Authors>
+    <Company>seksirakun48</Company>
+    <Product>Zakun's Advanced Computer System</Product>
+    <Description>Zakun's Advanced Computer System</Description>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ScpslManaged>C:\Program Files (x86)\Steam\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed</ScpslManaged>
+    <ProjectMerDll Condition="'$(ProjectMerDll)' == ''">$(APPDATA)\SCP Secret Laboratory\LabAPI\plugins\global\ProjectMER.dll</ProjectMerDll>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LabApi">
+      <HintPath>$(ScpslManaged)\LabApi.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(ScpslManaged)\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(ScpslManaged)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="CommandSystem.Core">
+      <HintPath>$(ScpslManaged)\CommandSystem.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>$(ScpslManaged)\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Mirror">
+      <HintPath>$(ScpslManaged)\Mirror.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="ProjectMER">
+      <HintPath>$(ProjectMerDll)</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="unity\**\*.cs" />
+  </ItemGroup>
+</Project>
